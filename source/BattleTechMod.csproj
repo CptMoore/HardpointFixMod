@@ -55,8 +55,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BattleTechMod.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="sorting\MechDefAdapter.cs" />
+    <Compile Include="sorting\MechDefRefreshInventoryPatch.cs" />
+    <Compile Include="sorting\MechHardpointRulesPatch.cs" />
+    <Compile Include="limits\MechLabLocationWidgetAdapter.cs" />
+    <Compile Include="utils\HardpointCounter.cs" />
+    <Compile Include="limits\MechLabLocationWidgetPatch.cs" />
+    <Compile Include="sorting\MechInitGameRepPatch.cs" />
+    <Compile Include="sorting\MechRepresentationSimGamePatch.cs" />
+    <Compile Include="manifest\VersionManifestUtilitiesPatch.cs" />
+    <Compile Include="utils\VHLLogger.cs" />
+    <Compile Include="limits\MechLabLocationWidgetPatchHelper.cs" />
+    <Compile Include="utils\VHLUtils.cs" />
+    <Compile Include="utils\WeaponComponentPrefabCalculator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
