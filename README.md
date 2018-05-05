@@ -4,11 +4,11 @@ BattleTech mod (using BTML) that limits your loadout possibilities to what mechs
 ** Warning: Uses the experimental BTML mod loader that might change, come here again to check for updates **
 
 Features:
-- Restrict weapon loadout that are supported by the mech model, so you have nice visual feedback on the battlefield.
-- Fix bad visual loadout selection issues, sometimes the wrong or ugly looking loadout was selected and shown.
-- Added a quickdraw with a second missle slot on the left torso. Both missle slots don't allow for more than 15 missle tubes, looks very cool now.
+- Restrict weapon loadouts to what is supported by the mech model. BattleTech has some of the best looking models thx to MWO, however we can rarely see them fully used.
+- Fix bad visual loadout selection issues, sometimes the wrong or ugly looking loadout was shown, a new algorithm should improve upon this.
+- Added a quickdraw with a second missle slot on the left torso. Both missle slots don't allow for more than 15 missle tubes total, looks cooler now.
 
-Example for the visual limitation portion of the mod, take the Highlander assault mech:
+Here is an example for the visual limitation portion of the mod, take the Highlander assault mech:
 The left torso has 2 missle hardpoint slots, however only one can mount an LRM20, the other is limited to LRM10. Without this mod you can mount an LRM20 also for the second slot, but it visually would only be showing up as LRM10. With this mod you can't mount the second LRM20 anymore, you have to take either an LRM10 or LRM5. Of course SRMs are still an option.
 The left arm is also limited to an LRM15 and you can't mount an LRM20 at all.
 
