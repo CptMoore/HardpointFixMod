@@ -7,10 +7,10 @@ namespace VisualHardpointLimits
     {
         internal static void Log(string text)
         {
-            using (var writer = new StreamWriter("D:\\log.txt", true))
-            {
-                writer.WriteLine(new DateTime() + " " + text);
-            }
+            //using (var writer = new StreamWriter("D:\\log.txt", true))
+            //{
+            //    writer.WriteLine(new DateTime() + " " + text);
+            //}
         }
 
         internal static void Log(Exception e)
