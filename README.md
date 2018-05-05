@@ -23,5 +23,9 @@ allowLRMsInSmallerSlotsForAll | boolean | default false | set this to true so al
 allowLRMsInSmallerSlotsForMechs | string[] | default ["atlas"] | a list of mechs that can field larger LRM sizes even in smaller slots. Allows cheating the same as battletech lore does.
 allowLRMsInLargerSlotsForAll | boolean | default true | allow smaller sized LRMs to be used in larger sized hardpoint slots. E.g. an LRM10 should fit into an LRM20 slot.
 
+## Download
+
+Downloads can be found on [github](https://github.com/CptMoore/VisualHardpointLimits/releases).
+
 ## Install
 After installing BTML, put into \BATTLETECH\Mods\ folder and launch the game.
