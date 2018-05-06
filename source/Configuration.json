@@ -1,0 +1,8 @@
+{
+    "allowLRMsInSmallerSlotsForAll" : false,
+    "allowLRMsInSmallerSlotsForMechs" : [
+        "atlas"
+    ],
+    "allowLRMsInLargerSlotsForAll" : true,
+	"enableLogging" :  true
+}

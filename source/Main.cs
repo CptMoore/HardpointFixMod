@@ -33,10 +33,12 @@ namespace VisualHardpointLimits
             public bool allowLRMsInSmallerSlotsForAll = false;
             public string[] allowLRMsInSmallerSlotsForMechs = { "atlas" };
             public bool allowLRMsInLargerSlotsForAll = true;
+            public bool enableLogging = true;
 
             public string ModDirectory => Path.Combine(Path.GetDirectoryName(VersionManifestUtilities.MANIFEST_FILEPATH), @"..\..\..\Mods\VisualHardpointLimits\");
             public string ConfigPath => Path.Combine(ModDirectory, "Configuration.json");
             public string ManifestPath => Path.Combine(ModDirectory, "VersionManifest.csv");
+            public string LogPath => Path.Combine(ModDirectory, @"log.txt");
 
             public void Load()
             {

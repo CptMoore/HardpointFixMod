@@ -61,6 +61,8 @@
     <Compile Include="sorting\MechDefRefreshInventoryPatch.cs" />
     <Compile Include="sorting\MechHardpointRulesPatch.cs" />
     <Compile Include="limits\MechLabLocationWidgetAdapter.cs" />
+    <Compile Include="stats\MechStatisticsRulesCalculateMovementStatPatch.cs" />
+    <Compile Include="stats\MechStatisticsRulesCalculateHeatEfficiencyStatPatch.cs" />
     <Compile Include="utils\HardpointCounter.cs" />
     <Compile Include="limits\MechLabLocationWidgetPatch.cs" />
     <Compile Include="sorting\MechInitGameRepPatch.cs" />
@@ -70,6 +72,10 @@
     <Compile Include="limits\MechLabLocationWidgetPatchHelper.cs" />
     <Compile Include="utils\VHLUtils.cs" />
     <Compile Include="utils\WeaponComponentPrefabCalculator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configuration.json" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

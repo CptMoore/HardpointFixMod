@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using BattleTech;
 
 namespace VisualHardpointLimits
 {
@@ -7,10 +8,15 @@ namespace VisualHardpointLimits
     {
         internal static void Log(string text)
         {
-            //using (var writer = new StreamWriter("D:\\log.txt", true))
-            //{
-            //    writer.WriteLine(new DateTime() + " " + text);
-            //}
+            if (!VisualHardpointLimits.config.enableLogging)
+            {
+                return;
+            }
+
+            using (var writer = new StreamWriter(VisualHardpointLimits.config.LogPath, true))
+            {
+                writer.WriteLine(new DateTime() + " " + text);
+            }
         }
 
         internal static void Log(Exception e)
