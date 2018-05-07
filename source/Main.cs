@@ -1,17 +1,19 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Harmony;
-using BattleTech;
 using System.Reflection;
-using BattleTech.Data;
+using HBS.Logging;
 using HBS.Util;
-using TMPro;
+using System.Linq;
+using Microsoft.CSharp;
+using System.CodeDom.Compiler;
 
 // ReSharper disable InconsistentNaming
 namespace VisualHardpointLimits
 {
     public static class VisualHardpointLimits
     {
-        private static string ModName = "VisualHardpointLimits";
+        public const string ModName = "VisualHardpointLimits";
 
         internal static Configuration config;
 
@@ -33,9 +35,11 @@ namespace VisualHardpointLimits
             public bool allowLRMsInSmallerSlotsForAll = false;
             public string[] allowLRMsInSmallerSlotsForMechs = { "atlas" };
             public bool allowLRMsInLargerSlotsForAll = true;
-            public bool enableLogging = true;
+            public bool enableLogging = false;
 
-            public string ModDirectory => Path.Combine(Path.GetDirectoryName(VersionManifestUtilities.MANIFEST_FILEPATH), @"..\..\..\Mods\VisualHardpointLimits\");
+
+            public string AssemblyPath => Assembly.GetExecutingAssembly().Location;
+            public string ModDirectory => Path.Combine(Path.GetDirectoryName(AssemblyPath), ModName);
             public string ConfigPath => Path.Combine(ModDirectory, "Configuration.json");
             public string ManifestPath => Path.Combine(ModDirectory, "VersionManifest.csv");
             public string LogPath => Path.Combine(ModDirectory, @"log.txt");
@@ -63,6 +67,33 @@ namespace VisualHardpointLimits
                     writer.Write(json);
                 }
             }
+        }
+    }
+
+    public static class ModLogger
+    {
+        public static void Log(string text)
+        {
+            if (!VisualHardpointLimits.config.enableLogging)
+            {
+                return;
+            }
+
+            using (var writer = new StreamWriter(VisualHardpointLimits.config.LogPath, true))
+            {
+                writer.WriteLine(new DateTime() + " " + text);
+            }
+        }
+
+        public static void Log(Exception e)
+        {
+            Log(e.ToString());
+        }
+
+        public static void Log(Exception e, string text)
+        {
+            Log(text);
+            Log(e);
         }
     }
 }

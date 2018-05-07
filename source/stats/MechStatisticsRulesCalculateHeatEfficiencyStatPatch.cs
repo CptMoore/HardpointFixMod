@@ -46,8 +46,8 @@ namespace VisualHardpointLimits
                     }
                 }
 
-                VHLLogger.Log("heatGenerationWeapons=" + heatGenerationWeapons);
-                VHLLogger.Log("totalHeatSinkDissipation=" + totalHeatSinkDissipation);
+                ModLogger.Log("heatGenerationWeapons=" + heatGenerationWeapons);
+                ModLogger.Log("totalHeatSinkDissipation=" + totalHeatSinkDissipation);
 
                 var maxHeat = Combat.Heat.MaxHeat;
                 {
@@ -81,8 +81,8 @@ namespace VisualHardpointLimits
                     heatGenerationWeapons = heatGeneratedStatistic.CurrentValue.Value<float>();
                 }
 
-                VHLLogger.Log("maxHeat=" + maxHeat);
-                VHLLogger.Log("heatGenerationWeapons=" + heatGenerationWeapons);
+                ModLogger.Log("maxHeat=" + maxHeat);
+                ModLogger.Log("heatGenerationWeapons=" + heatGenerationWeapons);
 
                 if (numberOfJumpJets >= Combat.MoveConstants.MoveTable.Length)
                 {
@@ -103,23 +103,23 @@ namespace VisualHardpointLimits
                 totalHeatSinkDissipation *= Combat.Heat.GlobalHeatSinkMultiplier;
                 var totalHeatGeneration = (heatGenerationWeapons + heatGenerationJumpJets) * Combat.Heat.GlobalHeatIncreaseMultiplier;
 
-                VHLLogger.Log("totalHeatGeneration=" + totalHeatGeneration);
+                ModLogger.Log("totalHeatGeneration=" + totalHeatGeneration);
 
                 // rounding steps for heatSinkDissipation
                 var heatDissipationPercent = Mathf.Min(totalHeatSinkDissipation / totalHeatGeneration * 100f, UnityGameInstance.BattleTechGame.MechStatisticsConstants.MaxHeatEfficiency);
                 heatDissipationPercent = Mathf.Max(heatDissipationPercent, UnityGameInstance.BattleTechGame.MechStatisticsConstants.MinHeatEfficiency);
 
-                VHLLogger.Log("heatDissipationPercent=" + heatDissipationPercent);
+                ModLogger.Log("heatDissipationPercent=" + heatDissipationPercent);
 
                 totalHeatSinkDissipation = totalHeatGeneration * (heatDissipationPercent / 100f);
 
-                VHLLogger.Log("totalHeatSinkDissipation=" + totalHeatSinkDissipation);
+                ModLogger.Log("totalHeatSinkDissipation=" + totalHeatSinkDissipation);
 
                 var heatLeftOver = totalHeatGeneration - totalHeatSinkDissipation;
                 var unusedHeatCapacity = maxHeat - heatLeftOver;
 
-                VHLLogger.Log("heatLeftOver=" + heatLeftOver);
-                VHLLogger.Log("unusedHeatCapacity=" + unusedHeatCapacity);
+                ModLogger.Log("heatLeftOver=" + heatLeftOver);
+                ModLogger.Log("unusedHeatCapacity=" + unusedHeatCapacity);
 
                 currentValue = Mathf.Round((unusedHeatCapacity / maxHeat) * 10f);
                 currentValue = Mathf.Max(Mathf.Min(currentValue, 10f), 1f);
@@ -128,7 +128,7 @@ namespace VisualHardpointLimits
             }
             catch (Exception e)
             {
-                VHLLogger.Log(e);
+                ModLogger.Log(e);
                 return true;
             }
         }

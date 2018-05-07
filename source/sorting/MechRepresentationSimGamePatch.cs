@@ -16,7 +16,7 @@ namespace VisualHardpointLimits
             }
             catch (Exception e)
             {
-                VHLLogger.Log(e);
+                ModLogger.Log(e);
             }
         }
 

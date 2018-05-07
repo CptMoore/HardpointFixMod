@@ -23,6 +23,11 @@ allowLRMsInSmallerSlotsForAll | boolean | default false | set this to true so al
 allowLRMsInSmallerSlotsForMechs | string[] | default ["atlas"] | a list of mechs that can field larger LRM sizes even in smaller slots. Allows cheating the same as battletech lore does.
 allowLRMsInLargerSlotsForAll | boolean | default true | allow smaller sized LRMs to be used in larger sized hardpoint slots. E.g. an LRM10 should fit into an LRM20 slot.
 
+## Additional Features
+
+- Fixed movement stats bar. Movement now actually shows movement without jump jets, as jump jets movement can be deduced from number of used jump jet slots.
+- Fixed heat efficency stats bar. Heat efficiency is calculated based on how much heat capacity is unused after an alpha strike (+ some JJ heat logic from the original code). Should now also properly work with heat sinks, heat banks and heat exchangers.
+
 ## Download
 
 Downloads can be found on [github](https://github.com/CptMoore/VisualHardpointLimits/releases).

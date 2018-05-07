@@ -40,7 +40,7 @@ namespace VisualHardpointLimits
             }
             catch (Exception e)
             {
-                VHLLogger.Log(e);
+                ModLogger.Log(e);
             }
         }
 
@@ -63,7 +63,7 @@ namespace VisualHardpointLimits
             }
             catch (Exception e)
             {
-                VHLLogger.Log(e);
+                ModLogger.Log(e);
                 return true;
             }
         }

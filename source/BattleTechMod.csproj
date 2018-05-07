@@ -68,14 +68,13 @@
     <Compile Include="sorting\MechInitGameRepPatch.cs" />
     <Compile Include="sorting\MechRepresentationSimGamePatch.cs" />
     <Compile Include="manifest\VersionManifestUtilitiesPatch.cs" />
-    <Compile Include="utils\VHLLogger.cs" />
     <Compile Include="limits\MechLabLocationWidgetPatchHelper.cs" />
     <Compile Include="utils\VHLUtils.cs" />
     <Compile Include="utils\WeaponComponentPrefabCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Configuration.json" />
-    <None Include="README.md" />
+    <None Include="..\Configuration.json" />
+    <None Include="..\README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

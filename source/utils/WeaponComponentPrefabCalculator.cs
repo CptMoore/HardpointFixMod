@@ -74,7 +74,7 @@ namespace VisualHardpointLimits
                 var prefabName = GetNewPrefabName(componentRef, location);
                 if (prefabName == null)
                 {
-                    VHLLogger.Log("could not find prefabName for " + componentRef?.Def?.PrefabIdentifier);
+                    ModLogger.Log("could not find prefabName for " + componentRef?.Def?.PrefabIdentifier);
                     NotMappedPrefabNameCount++;
                     continue;
                 }
@@ -126,13 +126,13 @@ namespace VisualHardpointLimits
 
             // since prefabNames is sorted by index and get available weapon component is already sorted from largest to smallest, we should have a nice sort order
 
-            VHLLogger.Log("availablePrefabNames for " + prefabBase);
-            availablePrefabNames.ForEach(VHLLogger.Log);
-            VHLLogger.Log("compatibleTerms for " + prefabId);
-            compatibleTerms.ForEach(VHLLogger.Log);
+            ModLogger.Log("availablePrefabNames for " + prefabBase);
+            availablePrefabNames.ForEach(ModLogger.Log);
+            ModLogger.Log("compatibleTerms for " + prefabId);
+            compatibleTerms.ForEach(ModLogger.Log);
 
             var prefabName = compatibleTerms.Select(t => availablePrefabNames.FirstOrDefault(n => n.Contains("_" + t + "_"))).FirstOrDefault(n => n != null);
-            VHLLogger.Log("found prefabName " + prefabName);
+            ModLogger.Log("found prefabName " + prefabName);
             return prefabName;
         }
 
