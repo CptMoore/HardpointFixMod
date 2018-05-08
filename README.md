@@ -5,6 +5,7 @@ BattleTech mod (using BTML) that limits your loadout possibilities to what mechs
 ** Warning: Uses the experimental BTML mod loader that might change, come here again to check for updates **
 
 * install [BattleTechModLoader v0.1-alpha](https://github.com/Mpstark/BattleTechModLoader/releases) using the [instructions here](https://github.com/Mpstark/BattleTechModLoader)
+* (optional) install [DynTechMod](https://github.com/CptMoore/DynTechMod/releases), also to freely modify the mod without visual studio
 
 ## Features
 - Restrict weapon loadouts to what is supported by the mech model. BattleTech has some of the best looking models thx to MWO, however we can rarely see them fully used.
@@ -33,4 +34,10 @@ allowLRMsInLargerSlotsForAll | boolean | default true | allow smaller sized LRMs
 Downloads can be found on [github](https://github.com/CptMoore/VisualHardpointLimits/releases).
 
 ## Install
-After installing BTML, put into \BATTLETECH\Mods\ folder and launch the game.
+
+After installing BTML and DynTechMod, put the mod into the \BATTLETECH\Mods\ folder and launch the game.
+
+## Development
+
+* Use git
+* Use Visual Studio or DynTechMod to compile the project

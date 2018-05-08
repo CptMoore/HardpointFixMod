@@ -74,7 +74,7 @@ namespace VisualHardpointLimits
                 var prefabName = GetNewPrefabName(componentRef, location);
                 if (prefabName == null)
                 {
-                    ModLogger.Log("could not find prefabName for " + componentRef?.Def?.PrefabIdentifier);
+                    Control.mod.Logger.LogDebug("could not find prefabName for " + componentRef?.Def?.PrefabIdentifier);
                     NotMappedPrefabNameCount++;
                     continue;
                 }
@@ -93,7 +93,7 @@ namespace VisualHardpointLimits
 
                 compatibleTerms = new List<string> { prefabIdFix };
 
-                if (VisualHardpointLimits.config.allowLRMsInLargerSlotsForAll)
+                if (Control.settings.allowLRMsInLargerSlotsForAll)
                 {
                     for (var i = index + 1; i < order.Length; i++)
                     {
@@ -101,7 +101,7 @@ namespace VisualHardpointLimits
                     }
                 }
 
-                if (VisualHardpointLimits.config.allowLRMsInSmallerSlotsForAll || VisualHardpointLimits.config.allowLRMsInSmallerSlotsForMechs.Contains(prefabBase))
+                if (Control.settings.allowLRMsInSmallerSlotsForAll || Control.settings.allowLRMsInSmallerSlotsForMechs.Contains(prefabBase))
                 {
                     for (var i = index - 1; i >= 0; i--)
                     {
@@ -126,13 +126,13 @@ namespace VisualHardpointLimits
 
             // since prefabNames is sorted by index and get available weapon component is already sorted from largest to smallest, we should have a nice sort order
 
-            ModLogger.Log("availablePrefabNames for " + prefabBase);
-            availablePrefabNames.ForEach(ModLogger.Log);
-            ModLogger.Log("compatibleTerms for " + prefabId);
-            compatibleTerms.ForEach(ModLogger.Log);
+            Control.mod.Logger.LogDebug("availablePrefabNames for " + prefabBase);
+            availablePrefabNames.ForEach(Control.mod.Logger.LogDebug);
+            Control.mod.Logger.LogDebug("compatibleTerms for " + prefabId);
+            compatibleTerms.ForEach(Control.mod.Logger.LogDebug);
 
             var prefabName = compatibleTerms.Select(t => availablePrefabNames.FirstOrDefault(n => n.Contains("_" + t + "_"))).FirstOrDefault(n => n != null);
-            ModLogger.Log("found prefabName " + prefabName);
+            Control.mod.Logger.LogDebug("found prefabName " + prefabName);
             return prefabName;
         }
 

@@ -22,7 +22,7 @@ namespace VisualHardpointLimits
             }
             catch (Exception e)
             {
-                ModLogger.Log(e);
+                Control.mod.Logger.LogDebug(e);
             }
         }
 

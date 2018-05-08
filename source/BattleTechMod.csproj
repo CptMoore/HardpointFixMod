@@ -7,8 +7,8 @@
     <ProjectGuid>{4C0B103D-D164-45B2-98C8-DC599B50520E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VisualHardpointLimits</RootNamespace>
-    <AssemblyName>VisualHardpointLimits</AssemblyName>
+    <RootNamespace>BattleTechMod</RootNamespace>
+    <AssemblyName>BattleTechMod</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\BattleTech_Data\Managed\0Harmony.dll</HintPath>
@@ -37,6 +40,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\BattleTech_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="DynTechMod">
+      <HintPath>..\..\DynTechMod.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,7 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
+    <Compile Include="Control.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="sorting\MechDefAdapter.cs" />
     <Compile Include="sorting\MechDefRefreshInventoryPatch.cs" />
@@ -73,8 +79,11 @@
     <Compile Include="utils\WeaponComponentPrefabCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Configuration.json" />
+    <None Include="..\Settings.json" />
     <None Include="..\README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>REM  copy /Y "$(TargetDir)$(TargetName).dll" "$(SolutionDir)..\..\$(TargetName).dll"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

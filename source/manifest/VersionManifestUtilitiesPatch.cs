@@ -12,7 +12,7 @@ namespace VisualHardpointLimits
         {
             try
             {
-                var addendum = VersionManifestUtilities.ManifestFromCSV(VisualHardpointLimits.config.ManifestPath);
+                var addendum = VersionManifestUtilities.ManifestFromCSV(Control.ManifestPath);
                 foreach (var entry in addendum.Entries)
                 {
                     __result.AddOrUpdate(entry.Id, entry.FilePath, entry.Type, entry.AddedOn, entry.AssetBundleName, entry.IsAssetBundlePersistent);
@@ -20,7 +20,7 @@ namespace VisualHardpointLimits
             }
             catch (Exception e)
             {
-                ModLogger.Log(e);
+                Control.mod.Logger.LogDebug(e);
             }
 
         }

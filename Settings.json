@@ -4,5 +4,6 @@
         "atlas"
     ],
     "allowLRMsInLargerSlotsForAll" : true,
-	"enableLogging" : true
+	"logFile" : "..\\vhl.log.txt",
+	"logLevel" : "Debug"
 }
