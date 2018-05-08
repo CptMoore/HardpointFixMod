@@ -3,7 +3,5 @@
     "allowLRMsInSmallerSlotsForMechs" : [
         "atlas"
     ],
-    "allowLRMsInLargerSlotsForAll" : true,
-	"logFile" : "..\\vhl.log.txt",
-	"logLevel" : "Debug"
+    "allowLRMsInLargerSlotsForAll" : true
 }
