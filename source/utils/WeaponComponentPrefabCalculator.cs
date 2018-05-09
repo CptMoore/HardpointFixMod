@@ -139,9 +139,20 @@ namespace VisualHardpointLimits
 
         private List<string> GetAvailablePrefabNamesForLocation(ChassisLocations location)
         {
-            return chassisDef.HardpointDataDef.HardpointData
-                .Where(x => x.location == VHLUtils.GetStringFromLocation(location)) // only location
-                .SelectMany(x => x.weapons)
+            var hardpointDatas = chassisDef.HardpointDataDef.HardpointData
+                .Where(x => x.location == VHLUtils.GetStringFromLocation(location));
+
+            // SelectMany with string[][] crashes if compiled with Mono.CSharp (2.1.0.0) for Unity, newer Mono and VS compilers are fine
+            var hpsets = new List<string[]>();
+            foreach (var hardpointData in hardpointDatas)
+            {
+                foreach (var hpset in hardpointData.weapons)
+                {
+                    hpsets.Add(hpset);
+                }
+            }
+
+            return hpsets
                 .Where(hpset => !hpset.Intersect(mapping.Values).Any()) // only include hardpoint sets not yet used
                 // commented out code not required, instead of filling the least used, we get the complete weapons list and sort by weapon sizes and fill from nicest index to ugliest index
                 //.Select(hpset => RemoveUnwantedHardpoints(location, hpset)) // that allows our length order to work better
