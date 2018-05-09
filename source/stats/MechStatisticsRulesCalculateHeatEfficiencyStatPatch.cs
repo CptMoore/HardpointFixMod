@@ -29,8 +29,9 @@ namespace VisualHardpointLimits
                     {
                         mechComponentRef.RefreshComponentDef();
                     }
-                    if (mechComponentRef.Def is WeaponDef weaponDef)
+                    if (mechComponentRef.Def is WeaponDef)
                     {
+                        var weaponDef = (WeaponDef)mechComponentRef.Def;
                         heatGenerationWeapons += weaponDef.HeatGenerated;
                     }
                     else if (mechComponentRef.ComponentDefType == ComponentType.JumpJet)
@@ -40,8 +41,9 @@ namespace VisualHardpointLimits
                             numberOfJumpJets++;
                         }
                     }
-                    else if (mechComponentRef.Def is HeatSinkDef heatSinkDef)
+                    else if (mechComponentRef.Def is HeatSinkDef)
                     {
+                        var heatSinkDef = (HeatSinkDef)mechComponentRef.Def;
                         totalHeatSinkDissipation += heatSinkDef.DissipationCapacity;
                     }
                 }
@@ -57,7 +59,7 @@ namespace VisualHardpointLimits
 
                     foreach (var mechComponentRef in mechDef.Inventory)
                     {
-                        if (mechComponentRef.Def?.statusEffects == null)
+                        if (mechComponentRef.Def == null || mechComponentRef.Def.statusEffects == null)
                         {
                             continue;
                         }
@@ -70,8 +72,11 @@ namespace VisualHardpointLimits
                                 case "MaxHeat":
                                     stats.PerformOperation(maxHeatStatistic, effect.statisticData);
                                     break;
-                                case "HeatGenerated" when effect.statisticData.targetCollection == StatisticEffectData.TargetCollection.Weapon:
-                                    stats.PerformOperation(heatGeneratedStatistic, effect.statisticData);
+                                case "HeatGenerated":
+                                    if (effect.statisticData.targetCollection == StatisticEffectData.TargetCollection.Weapon)
+                                    {
+                                        stats.PerformOperation(heatGeneratedStatistic, effect.statisticData);
+                                    }
                                     break;
                             }
                         }

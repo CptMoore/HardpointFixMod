@@ -15,8 +15,19 @@ namespace VisualHardpointLimits
             _traverse = Traverse.Create(instance);
         }
 
-        internal MechComponentRef[] Inventory => _traverse.Field("inventory").GetValue() as MechComponentRef[];
-        internal DataManager DataManager => _traverse.Field("dataManager").GetValue() as DataManager;
-        internal ChassisDef Chassis => _instance.Chassis;
+        internal MechComponentRef[] Inventory
+        {
+            get { return _traverse.Field("inventory").GetValue() as MechComponentRef[]; }
+        }
+
+        internal DataManager DataManager
+        {
+            get { return _traverse.Field("dataManager").GetValue() as DataManager; }
+        }
+
+        internal ChassisDef Chassis
+        {
+            get { return _instance.Chassis; }
+        }
     }
 }

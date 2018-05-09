@@ -27,7 +27,7 @@ namespace VisualHardpointLimits
             var dragItem = _adapter.MechLab.DragItem;
             var componentRef = dragItem.ComponentRef;
 
-            if (componentRef?.ComponentDefType != ComponentType.Weapon)
+            if (componentRef == null || componentRef.ComponentDefType != ComponentType.Weapon)
             {
                 return true;
             }

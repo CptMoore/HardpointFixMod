@@ -13,7 +13,7 @@ namespace VisualHardpointLimits
             try
             {
                 var adapter = new MechDefAdapter(__instance);
-                if (adapter.Chassis?.HardpointDataDef == null)
+                if (adapter.Chassis == null || adapter.Chassis.HardpointDataDef == null)
                 {
                     return;
                 }

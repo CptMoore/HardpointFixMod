@@ -12,7 +12,9 @@ namespace VisualHardpointLimits
         {
             try
             {
-                MechHardpointRulesGetComponentPrefabNamePatch.SetupCalculator(__instance.mechDef?.Chassis, __instance.mechDef?.Inventory?.ToList());
+                MechHardpointRulesGetComponentPrefabNamePatch.SetupCalculator(
+                    __instance.mechDef != null ? __instance.mechDef.Chassis : null,
+                    __instance.mechDef != null ? (__instance.mechDef.Inventory != null ? __instance.mechDef.Inventory.ToList() : null) : null);
             }
             catch (Exception e)
             {

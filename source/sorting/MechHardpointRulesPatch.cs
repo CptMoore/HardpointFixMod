@@ -13,7 +13,7 @@ namespace VisualHardpointLimits
 
         internal static void SetupCalculator(ChassisDef chassisDef, List<MechComponentRef> componentRefs)
         {
-            if (chassisDef?.HardpointDataDef?.HardpointData == null)
+            if (chassisDef == null || chassisDef.HardpointDataDef == null || chassisDef.HardpointDataDef.HardpointData == null)
             {
                 return;
             }
@@ -55,9 +55,10 @@ namespace VisualHardpointLimits
             try
             {
 
-                if (componentRef is MechComponentRef mechComponentRef && componentRef.ComponentDefType == ComponentType.Weapon)
+                if (componentRef is MechComponentRef && componentRef.ComponentDefType == ComponentType.Weapon)
                 {
-                    __result = calculator?.GetPrefabName(mechComponentRef);
+                    var mechComponentRef = (MechComponentRef) componentRef;
+                    __result = calculator != null ? calculator.GetPrefabName(mechComponentRef) : null;
                 }
                 return __result == null;
             }

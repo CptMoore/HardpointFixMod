@@ -29,7 +29,10 @@ namespace VisualHardpointLimits
             mod.Logger.Log("Loaded " + mod.Name);
         }
 
-        public static string ManifestPath => Path.Combine(mod.Directory, "VersionManifest.csv");
+        public static string ManifestPath
+        {
+            get { return Path.Combine(mod.Directory, "VersionManifest.csv"); }
+        }
     }
 
     public class HardpointSettings : ModSettings

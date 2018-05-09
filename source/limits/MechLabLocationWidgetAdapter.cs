@@ -17,9 +17,24 @@ namespace VisualHardpointLimits
             _traverse = Traverse.Create(instance);
         }
 
-        internal MechLabPanel MechLab => _traverse.Field("mechLab").GetValue() as MechLabPanel;
-        internal TextMeshProUGUI LocationName => _traverse.Field("locationName").GetValue() as TextMeshProUGUI;
-        internal List<MechLabItemSlotElement> LocalInventory => _traverse.Field("localInventory").GetValue() as List<MechLabItemSlotElement>;
-        internal LocationLoadoutDef Loadout => _instance.loadout;
+        internal MechLabPanel MechLab
+        {
+            get { return _traverse.Field("mechLab").GetValue() as MechLabPanel; }
+        }
+
+        internal TextMeshProUGUI LocationName
+        {
+            get { return _traverse.Field("locationName").GetValue() as TextMeshProUGUI; }
+        }
+
+        internal List<MechLabItemSlotElement> LocalInventory
+        {
+            get { return _traverse.Field("localInventory").GetValue() as List<MechLabItemSlotElement>; }
+        }
+
+        internal LocationLoadoutDef Loadout
+        {
+            get { return _instance.loadout; }
+        }
     }
 }

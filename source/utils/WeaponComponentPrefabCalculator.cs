@@ -54,7 +54,8 @@ namespace VisualHardpointLimits
         
         internal string GetPrefabName(MechComponentRef componentRef)
         {
-            if (mapping.TryGetValue(componentRef, out var value))
+            string value;
+            if (mapping.TryGetValue(componentRef, out value))
             {
                 return value;
             }
@@ -74,7 +75,7 @@ namespace VisualHardpointLimits
                 var prefabName = GetNewPrefabName(componentRef, location);
                 if (prefabName == null)
                 {
-                    Control.mod.Logger.LogDebug("could not find prefabName for " + componentRef?.Def?.PrefabIdentifier);
+                    Control.mod.Logger.LogDebug("could not find prefabName for " + (componentRef != null ? (componentRef.Def != null ? componentRef.Def.PrefabIdentifier : null) : null));
                     NotMappedPrefabNameCount++;
                     continue;
                 }
