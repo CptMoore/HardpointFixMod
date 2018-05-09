@@ -40,7 +40,7 @@ namespace VisualHardpointLimits
             }
             catch (Exception e)
             {
-                Control.mod.Logger.LogDebug(e);
+                Control.mod.Logger.LogError(e);
             }
         }
 
@@ -64,7 +64,7 @@ namespace VisualHardpointLimits
             }
             catch (Exception e)
             {
-                Control.mod.Logger.LogDebug(e);
+                Control.mod.Logger.LogError(e);
                 return true;
             }
         }
