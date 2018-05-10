@@ -4,7 +4,7 @@ using System.Linq;
 using BattleTech;
 using Harmony;
 
-namespace VisualHardpointLimits
+namespace HardpointFixMod
 {
     [HarmonyPatch(typeof(MechHardpointRules), "GetComponentPrefabName")]
     public static class MechHardpointRulesGetComponentPrefabNamePatch

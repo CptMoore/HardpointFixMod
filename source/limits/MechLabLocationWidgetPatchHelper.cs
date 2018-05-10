@@ -3,7 +3,7 @@ using BattleTech;
 using BattleTech.UI;
 using UnityEngine.EventSystems;
 
-namespace VisualHardpointLimits
+namespace HardpointFixMod
 {
     internal class MechLabLocationWidgetPatchHelper
     {

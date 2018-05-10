@@ -1,7 +1,7 @@
 ﻿using System;
 using BattleTech;
 
-namespace VisualHardpointLimits
+namespace HardpointFixMod
 {
     internal static class VHLUtils
     {

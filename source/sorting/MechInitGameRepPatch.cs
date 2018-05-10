@@ -4,7 +4,7 @@ using BattleTech;
 using Harmony;
 using UnityEngine;
 
-namespace VisualHardpointLimits
+namespace HardpointFixMod
 {
     [HarmonyPatch(typeof(Mech), "InitGameRep")]
     public static class MechInitGameRepPatch

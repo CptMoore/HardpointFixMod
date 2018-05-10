@@ -4,7 +4,7 @@ using BattleTech.UI;
 using Harmony;
 using UnityEngine.EventSystems;
 
-namespace VisualHardpointLimits
+namespace HardpointFixMod
 {
     [HarmonyPatch(typeof(MechLabLocationWidget), "OnMechLabDrop")]
     public static class MechLabLocationWidgetPatch

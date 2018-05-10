@@ -1,12 +1,10 @@
 ﻿
-using DynTechMod;
 using HBS.Logging;
 using Harmony;
-using System.IO;
 using System.Reflection;
+using DynModLib;
 
-// ReSharper disable InconsistentNaming
-namespace VisualHardpointLimits
+namespace HardpointFixMod
 {
     public static class Control
     {
@@ -14,9 +12,9 @@ namespace VisualHardpointLimits
 
         public static HardpointSettings settings = new HardpointSettings();
 
-        public static void OnInit(Mod mod)
+        public static void OnInit(string modDirectory)
         {
-            Control.mod = mod;
+            mod = new Mod(modDirectory);
             Logger.SetLoggerLevel(mod.Logger.Name, LogLevel.Log);
 
             mod.LoadSettings(settings);
@@ -27,11 +25,6 @@ namespace VisualHardpointLimits
             // logging output can be found under BATTLETECH\BattleTech_Data\output_log.txt
             // or also under yourmod/log.txt
             mod.Logger.Log("Loaded " + mod.Name);
-        }
-
-        public static string ManifestPath
-        {
-            get { return Path.Combine(mod.Directory, "VersionManifest.csv"); }
         }
     }
 

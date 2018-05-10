@@ -1,6 +1,6 @@
 ﻿using BattleTech;
 
-namespace VisualHardpointLimits
+namespace HardpointFixMod
 {
     internal class HardpointCounter
     {

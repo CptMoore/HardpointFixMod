@@ -1,5 +1,5 @@
 {
-    "allowLRMsInSmallerSlotsForAll" : false,
+    "allowLRMsInSmallerSlotsForAll" : true,
     "allowLRMsInSmallerSlotsForMechs" : [
         "atlas"
     ],

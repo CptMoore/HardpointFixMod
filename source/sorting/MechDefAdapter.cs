@@ -2,7 +2,7 @@
 using BattleTech.Data;
 using Harmony;
 
-namespace VisualHardpointLimits
+namespace HardpointFixMod
 {
     internal class MechDefAdapter
     {

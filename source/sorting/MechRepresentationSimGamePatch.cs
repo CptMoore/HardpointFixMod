@@ -3,7 +3,7 @@ using System.Linq;
 using BattleTech;
 using Harmony;
 
-namespace VisualHardpointLimits
+namespace HardpointFixMod
 {
     [HarmonyPatch(typeof(MechRepresentationSimGame), "LoadWeapons")]
     public static class MechRepresentationSimGameLoadWeaponsPatch

@@ -3,7 +3,7 @@ using System.Linq;
 using BattleTech;
 using Harmony;
 
-namespace VisualHardpointLimits
+namespace HardpointFixMod
 {
     [HarmonyPatch(typeof(MechDef), "RefreshInventory")]
     public static class MechDefRefreshInventoryPatch

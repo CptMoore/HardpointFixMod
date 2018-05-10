@@ -4,7 +4,7 @@ using BattleTech.UI;
 using Harmony;
 using TMPro;
 
-namespace VisualHardpointLimits
+namespace HardpointFixMod
 {
     internal class MechLabLocationWidgetAdapter
     {
