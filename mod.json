@@ -1,5 +1,6 @@
 {
 	"Name": "HardpointFixMod",
+	"DependsOn": ["DynModLib"],
 	"DLL": "HardpointFixMod.dll",
 	"DLLEntryPoint": "HardpointFixMod.Control.Start"
 }
