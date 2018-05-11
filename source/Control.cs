@@ -12,7 +12,7 @@ namespace HardpointFixMod
 
         public static HardpointSettings settings = new HardpointSettings();
 
-        public static void OnInit(string modDirectory)
+        public static void Start(string modDirectory, string json)
         {
             mod = new Mod(modDirectory);
             Logger.SetLoggerLevel(mod.Logger.Name, LogLevel.Log);
