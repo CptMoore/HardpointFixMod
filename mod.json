@@ -1,5 +1,8 @@
 {
 	"Name": "HardpointFixMod",
+	"Author": "CptMoore",
+	"Website": "https://github.com/CptMoore/HardpointFixMod",
+
 	"DependsOn": ["DynModLib"],
 	"DLL": "HardpointFixMod.dll",
 	"DLLEntryPoint": "HardpointFixMod.Control.Start"
