@@ -79,6 +79,7 @@
     <Compile Include="utils\WeaponComponentPrefabCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\mod.json" />
     <None Include="..\Settings.json" />
     <None Include="..\README.md" />
   </ItemGroup>
