@@ -13,6 +13,10 @@ namespace HardpointFixMod
         {
             try
             {
+                if (!Control.settings.enforceHardpointLimits)
+                {
+                    return true;
+                }
                 var vhl = new MechLabLocationWidgetPatchHelper(__instance);
                 return vhl.MechLabLocationWidgetOnMechLabDrop(eventData);
             }

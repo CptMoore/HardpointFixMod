@@ -1,4 +1,5 @@
 {
+    "enforceHardpointLimits" : true,
     "allowLRMsInSmallerSlotsForAll" : true,
     "allowLRMsInSmallerSlotsForMechs" : [
         "atlas"

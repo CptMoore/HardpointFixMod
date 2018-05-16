@@ -30,6 +30,7 @@ namespace HardpointFixMod
 
     public class HardpointSettings : ModSettings
     {
+        public bool enforceHardpointLimits = true;
         public bool allowLRMsInSmallerSlotsForAll = false;
         public string[] allowLRMsInSmallerSlotsForMechs = { "atlas" };
         public bool allowLRMsInLargerSlotsForAll = true;
