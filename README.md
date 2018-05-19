@@ -25,7 +25,7 @@ An example of how the weapon loadout restrictions feature work for the Highlande
 The left torso has 2 missle hardpoint slots, however only one can mount an LRM20, the other is limited to LRM10. Without this mod you can mount an LRM20 also for the second slot, but it visually would only be showing up as LRM10. With this mod you can't mount the second LRM20 anymore, you have to take either an LRM10 or LRM5. Of course SRMs are still an option.
 The left arm is also limited to an LRM15 and you can't mount an LRM20 at all.
 
-There are also currently 3 configuration settings available:
+There are currently the following configuration settings available:
 
 Setting | Type | Default | Description
 --- | --- | --- | ---
