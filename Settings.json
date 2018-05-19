@@ -1,5 +1,6 @@
 {
     "enforceHardpointLimits" : true,
+    "allowDefaultLoadoutWeapons" : true,
     "allowLRMsInSmallerSlotsForAll" : true,
     "allowLRMsInSmallerSlotsForMechs" : [
         "atlas"
