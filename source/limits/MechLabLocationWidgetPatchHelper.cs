@@ -32,6 +32,11 @@ namespace HardpointFixMod
                 return true;
             }
 
+            if (Control.settings.allowDefaultLoadoutWeapons && ComponentIsPartOfDefaultLoadout(componentRef))
+            {
+                return true;
+            }
+
             if (GetNotMappedPrefabNameCount(componentRef) > 0)
             {
                 var dropErrorMessage = string.Format("Cannot add {0} to {1}: There are no available {2} hardpoints.",
@@ -45,6 +50,31 @@ namespace HardpointFixMod
             }
 
             return true;
+        }
+
+        private bool ComponentIsPartOfDefaultLoadout(MechComponentRef componentRef)
+        {
+            var chassisDef = _adapter.MechLab.activeMechDef.Chassis;
+            var mechDefs = _adapter.MechLab.dataManager.MechDefs;
+            foreach (var key in mechDefs.Keys)
+            {
+                var mechDef = mechDefs.Get(key);
+                if (mechDef.Chassis != chassisDef)
+                {
+                    continue;
+                }
+                var location = _adapter.Loadout.Location;
+                if (mechDef.Inventory.Any(c => c.MountedLocation == location && c.Def == componentRef.Def))
+                {
+                    Control.mod.Logger.LogDebug(
+                        "found component " + componentRef.Def.Description.Id
+                                 + " to be in use on mech " + mechDef.Description.Id
+                                 + " for location " + location);
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private int GetNotMappedPrefabNameCount(MechComponentRef newComponentRef)

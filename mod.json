@@ -3,6 +3,7 @@
 	"Author": "CptMoore",
 	"Website": "https://github.com/CptMoore/HardpointFixMod",
 
+	"Enabled": true,
 	"DependsOn": ["DynModLib"],
 	"DLL": "HardpointFixMod.dll",
 	"DLLEntryPoint": "HardpointFixMod.Control.Start"

@@ -29,10 +29,11 @@ There are also currently 3 configuration settings available:
 
 Setting | Type | Default | Description
 --- | --- | --- | ---
-enforceHardpointLimits | boolean | default true | set this to false to deactivate the hardpoint limits in mechlab
-allowLRMsInSmallerSlotsForAll | boolean | default true | set this to false so only mechs with a proper sized hardpoint can field an LRM20.
+enforceHardpointLimits | bool | true | set this to false to deactivate the hardpoint limits in mechlab
+allowDefaultLoadoutWeapons | bool | true | always allow to reattach weapons the mech comes with by default
+allowLRMsInSmallerSlotsForAll | bool | true | set this to false so only mechs with a proper sized hardpoint can field an LRM20.
 allowLRMsInSmallerSlotsForMechs | string[] | default ["atlas"] | a list of mechs that can field larger LRM sizes even in smaller slots, even if allowLRMsInSmallerSlotsForAll is false.
-allowLRMsInLargerSlotsForAll | boolean | default true | allow smaller sized LRMs to be used in larger sized hardpoint slots. E.g. an LRM10 should fit into an LRM20 slot.
+allowLRMsInLargerSlotsForAll | bool | true | allow smaller sized LRMs to be used in larger sized hardpoint slots. E.g. an LRM10 should fit into an LRM20 slot.
 
 ## Download
 

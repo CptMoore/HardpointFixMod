@@ -1,4 +1,5 @@
 ﻿
+using System;
 using HBS.Logging;
 using Harmony;
 using System.Reflection;
@@ -15,11 +16,9 @@ namespace HardpointFixMod
         public static void Start(string modDirectory, string json)
         {
             mod = new Mod(modDirectory);
-            Logger.SetLoggerLevel(mod.Logger.Name, LogLevel.Log);
-
             mod.LoadSettings(settings);
-			
-			var harmony = HarmonyInstance.Create(mod.Name);
+
+            var harmony = HarmonyInstance.Create(mod.Name);
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
             // logging output can be found under BATTLETECH\BattleTech_Data\output_log.txt
@@ -31,6 +30,7 @@ namespace HardpointFixMod
     public class HardpointSettings : ModSettings
     {
         public bool enforceHardpointLimits = true;
+        public bool allowDefaultLoadoutWeapons = true;
         public bool allowLRMsInSmallerSlotsForAll = false;
         public string[] allowLRMsInSmallerSlotsForMechs = { "atlas" };
         public bool allowLRMsInLargerSlotsForAll = true;
