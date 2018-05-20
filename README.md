@@ -35,6 +35,10 @@ allowLRMsInSmallerSlotsForAll | bool | true | set this to false so only mechs wi
 allowLRMsInSmallerSlotsForMechs | string[] | default ["atlas"] | a list of mechs that can field larger LRM sizes even in smaller slots, even if allowLRMsInSmallerSlotsForAll is false.
 allowLRMsInLargerSlotsForAll | bool | true | allow smaller sized LRMs to be used in larger sized hardpoint slots. E.g. an LRM10 should fit into an LRM20 slot.
 
+## Limitations
+
+- can't replace weapons by dragging another weapon ontop of it, you have to remove the weapon first and then add another one (you dont have to leave the mechlab for this to work)
+
 ## Download
 
 Downloads can be found on [github](https://github.com/CptMoore/HardpointFixMod/releases).
