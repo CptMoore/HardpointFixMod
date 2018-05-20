@@ -64,7 +64,7 @@ namespace HardpointFixMod
                     continue;
                 }
                 var location = _adapter.Loadout.Location;
-                if (mechDef.Inventory.Any(c => c.MountedLocation == location && c.Def == componentRef.Def))
+                if (mechDef.Inventory.Any(c => c.MountedLocation == location && c.Def.PrefabIdentifier == componentRef.Def.PrefabIdentifier))
                 {
                     Control.mod.Logger.LogDebug(
                         "found component " + componentRef.Def.Description.Id
