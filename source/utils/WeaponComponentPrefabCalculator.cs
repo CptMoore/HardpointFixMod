@@ -110,6 +110,10 @@ namespace HardpointFixMod
                     }
                 }
             }
+            else if (prefabId.Contains("ac"))
+            {
+                compatibleTerms = new List<string> { prefabId, "ac" }; // fix for hunchback ac hardpoint
+            }
             else
             {
                 compatibleTerms = new List<string> { prefabId };
