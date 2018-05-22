@@ -19,7 +19,7 @@ namespace HardpointFixMod
                 }
 
                 var componentRefs = adapter.Inventory
-                    .Where(c => c != null).Do(c =>
+                    .Where(c => c != null).Select(c =>
                     {
                         if (c.DataManager == null)
                         {
@@ -27,6 +27,8 @@ namespace HardpointFixMod
                         }
 
                         c.RefreshComponentDef();
+
+                        return c;
                     })
                     .Where(c => !c.hasPrefabName)
                     .ToList();
