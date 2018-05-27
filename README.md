@@ -41,7 +41,7 @@ allowLRMsInLargerSlotsForAll | bool | true | allow smaller sized LRMs to be used
 
 ## Download
 
-Downloads can be found on [github](https://github.com/CptMoore/HardpointFixMod/releases).
+Downloads can be found on [github](https://github.com/CptMoore/HardpointFixMod/).
 
 ## Install
 
